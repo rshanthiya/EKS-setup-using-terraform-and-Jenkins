@@ -15,7 +15,7 @@ vpc_id = module.vpc.vpc_id
 eks_managed_node_group_defaults = {
     ami_type = "AL2_x86_64"
     instance_type = ["t3.medium"]
-    vpc.security_group_id = [aws_security_group.all_worker_mgmt]
+    vpc_security_group_ids = [aws_security_group.all_worker_mgmt.id]
 }
 eks_managed_node_groups = {
     node_group = {
